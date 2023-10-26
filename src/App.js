@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Toggle from "./Toggle";
+import './index.css'
 function App() {
+  const [bgColor,setBgColor] = useState('bg-body-color')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`display ${bgColor}`} >
+      <Toggle color={"BLUE"} setBgColor={setBgColor}/>
+      <Toggle color={"GREEN"} setBgColor={setBgColor}/>
+      <Toggle color={"YELLOW"} setBgColor={setBgColor}/>
+      <Toggle color={"RED"} setBgColor={setBgColor}/>
     </div>
   );
 }
